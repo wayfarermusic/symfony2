@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {# <p>Hello Test {{ name }}!</p> #}
+    
+    <p>お問い合わせ</p>
+    
+    <form action="{{ path('index') }}" method="post" {{form_enctype(form)}}
+        
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        
+        <span>電話番号</span>
+        {{ form_widget(form.tel1) }}&nbsp;-&nbsp;
+        {{ form_widget(form.tel2) }}&nbsp;-&nbsp;
+        {{ form_widget(form.tel3) }}
+        
+        {{ form_row(form.comment) }}
+        
+      <p class="btn_list">
+        <input type="submit" />
+      </p>
+      
+    </form>
+
+{#    
+    <table>
+      <tr>
+        <th>メールアドレス</th>
+        <td>
+          
+        </td>
+      </tr>
+    </tabale>
+  #}
+    
+{% endblock %}

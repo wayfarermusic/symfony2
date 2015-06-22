@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {# <p>Hello Test {{ name }}!</p> #}
+    
+    <h1>お問い合わせ（確認）</h1>
+    <div id="contact">
+      
+      <form action="{{ path('comfirm') }}" method="post" {{form_enctype(form)}}
+        
+        <table>
+          
+          <tr>
+            <th>{{ form_label(form.name) }}</th>
+            <td>{{ hello.name }}</td>
+          </tr>
+          
+          <tr>
+            <th>{{ form_label(form.email) }}</th>
+            <td>{{ hello.email }}</td>
+          </tr>
+          
+          <tr>
+            <th><span>電話番号</span></th>
+            <td>{{ hello.tel1 }}-{{ hello.tel2 }}-{{ hello.tel3 }}</td>
+          </tr>
+          
+          <tr>
+            <th>{{ form_label(form.comment) }}</th>
+            <td>{{ hello.comment }}</td>
+          </tr>
+          
+        </table>
+        
+        <ul class="btn_list">
+          <li>
+            <a href="{{ path('index') }}">入力内容の修正</a>
+          </li>
+          <li>
+            <input type="submit" />
+          </li>
+        </ul>
+        
+      </form>
+      
+    </div>
+    
+{% endblock %}

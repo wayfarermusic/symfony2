@@ -1,0 +1,14 @@
+# 書き方その１
+language: php
+php:
+  - "5.5"
+  - "5.4"
+
+# コマンドが一つだけの場合
+script: phpunit -c app
+
+notifications:
+  emails:
+    - rirakkuma.music@gmail.com
+  on_success: always # default: change
+  on_failure: always
