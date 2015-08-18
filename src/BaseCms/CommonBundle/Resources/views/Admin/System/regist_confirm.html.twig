@@ -1,0 +1,55 @@
+{% extends 'BaseCmsCommonBundle:Admin:layout.html.twig' %}
+
+{% block body %}
+    {# <p>Hello Test {{ name }}!</p> #}
+    
+    <p>管理者登録</p>
+    
+    <form action="{{ path('base_cms_admin_system_regist_confirm') }}" method="post" {{form_enctype(form)}}
+        
+        <table>
+          
+            <tr>
+                <th>{{ form_label(form.name) }}</th>
+                <td>{{ admin.name }}</td>
+            </tr>
+            
+            <tr>
+                <th>{{ form_label(form.userId) }}</th>
+                <td>{{ admin.userId }}</td>
+            </tr>
+            
+            <tr>
+                <th>{{ form_label(form.password) }}</th>
+                <td>{{ admin.password }}</td>
+            </tr>
+            
+            <tr>
+                <th>{{ form_label(form.adminLevelId) }}</th>
+                <td>{{ admin.adminLevelId }}</td>
+            </tr>
+            
+            <tr>
+                <th>{{ form_label(form.memo) }}</th>
+                <td>{{ admin.memo }}</td>
+            </tr>
+            
+            <tr>
+                <th>{{ form_label(form.status) }}</th>
+                <td>{{ admin.status }}</td>
+            </tr>
+          
+        </table>
+        
+      <ul class="btn_list">
+          <li>
+            <a href="{{ path('base_cms_admin_system_regist') }}">入力内容の修正</a>
+          </li>
+          <li>
+            <input type="submit" />
+          </li>
+      </ul>
+      
+    </form>
+    
+{% endblock %}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}管理画面{% endblock %}</title>
+        
+        <link href="{{ asset('bundles/basecmscommon/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bundles/basecmscommon/bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bundles/basecmscommon/css/admin/common.css') }}" rel="stylesheet" />
+        
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

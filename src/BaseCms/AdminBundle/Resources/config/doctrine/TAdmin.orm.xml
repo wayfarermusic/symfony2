@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BaseCms\AdminBundle\Entity\TAdmin" table="t_admin">
+    <id name="adminId" type="integer" column="admin_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="text" column="name" nullable="false"/>
+    <field name="password" type="text" column="password" nullable="false"/>
+    <field name="salt" type="text" column="salt" nullable="false"/>
+    <field name="adminLevelId" type="smallint" column="admin_level_id" nullable="false"/>
+    <field name="memo" type="text" column="memo" nullable="false"/>
+    <field name="createDate" type="datetime" column="create_date" nullable="false"/>
+    <field name="updateDate" type="datetime" column="update_date" nullable="false"/>
+    <field name="delFlg" type="smallint" column="del_flg" nullable="false"/>
+  </entity>
+</doctrine-mapping>

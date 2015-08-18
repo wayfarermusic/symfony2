@@ -38,7 +38,7 @@ assetic:
     debug:          "%kernel.debug%"
     use_controller: false
     #bundles:        [ ]
-    bundles:        [ AcmeHelloBundle ]
+    bundles:        [ AcmeHelloBundle, BaseCmsAdminBundle ]
     #java: /usr/bin/java
     filters:
         less:

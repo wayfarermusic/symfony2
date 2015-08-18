@@ -19,7 +19,10 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new MySystem\HelloBundle\MySystemHelloBundle(),
             new Acme\HelloBundle\AcmeHelloBundle(),
-            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle()
+            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new BaseCms\AdminBundle\BaseCmsAdminBundle(),
+            new BaseSms\CommonBundle\BaseSmsCommonBundle(),
+            new BaseCms\CommonBundle\BaseCmsCommonBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

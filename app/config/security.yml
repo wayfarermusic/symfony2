@@ -3,7 +3,11 @@
 security:
     # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        #Symfony\Component\Security\Core\User\User: plaintext
+        BaseCms\CommonBundle\Entity\DtbAdmin: 
+            algorithm:  sha512 # 暗号化を使うアルゴリズム
+            iterations: 10 # 暗号化をやり続ける回数
+            encode_as_base64: true # encodeでbase64を使うか。falseならbin2hexを使う
 
     # http://symfony.com/doc/current/book/security.html#hierarchical-roles
     role_hierarchy:
@@ -44,9 +48,22 @@ security:
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
-
+        
+        #管理画面の設定
+        admin_login:
+          pattern:  ^/admin/login$
+          security: false
+        
+        admin_secured_area:
+            pattern:    ^/admin/
+            anonymous: ~
+            form_login:
+                login_path:  /admin/login
+                check_path:  /admin/login_check
+        
     # with these settings you can restrict or allow access for different parts
     # of your application based on roles, ip, host or methods
     # http://symfony.com/doc/current/cookbook/security/access_control.html
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        #- { path: ^/admin, roles: ROLE_ADMIN }

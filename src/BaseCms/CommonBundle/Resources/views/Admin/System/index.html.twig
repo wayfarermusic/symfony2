@@ -1,0 +1,65 @@
+{% extends 'BaseCmsCommonBundle:Admin:layout.html.twig' %}
+
+{% block body %}
+    
+    <div id="wrapper">
+    
+        <header class="clearfix">
+            
+            <h1>BaseCms</h1>
+            <ul>
+                <li>
+                    <a href="">サイト表示</a>
+                </li>
+                <li>
+                    <a href="">ログアウト</a>
+                </li>
+            </ul>
+        </header>
+        
+        <div class="mainContents row">
+        
+            <nav class="leftContents col-sm-2">
+            
+                <h2>管理者管理</h2>
+                <ul>
+                    <li>
+                        <a href="{{ path('base_cms_admin_system') }}">管理者一覧</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('base_cms_admin_system_regist') }}">管理者登録</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="rightContents col-sm-10">
+            
+                <h3 class="pageTitle">管理者一覧</h3>
+                
+                <section class="searchContents">
+                    
+                    <form method="get" action="{{ path('base_cms_admin_system_search') }}">
+                        
+                        {{ form_row(form.adminId) }}
+                        {{ form_row(form.adminLevelId) }}
+                        {{ form_row(form.name) }}
+                        {{ form_row(form.status) }}
+                        {{ form_row(form.number) }}
+                        
+                        <ul class="btn_list">
+                            <li>
+                                <input type="submit" class="btn btn-warning"/>
+                            </li>
+                        </ul>
+                        
+                    </form>
+                    
+                </section>
+                
+            </div>
+        
+        </div>
+        
+    </div>
+    
+{% endblock %}

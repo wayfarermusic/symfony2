@@ -1,0 +1,251 @@
+<?php
+
+namespace BaseCms\CommonBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * DtbAdmin
+ */
+class DtbAdmin
+{
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var string
+     */
+    private $password;
+
+    /**
+     * @var string
+     */
+    private $salt;
+
+    /**
+     * @var integer
+     */
+    private $adminLevelId;
+
+    /**
+     * @var string
+     */
+    private $memo;
+
+    /**
+     * @var \DateTime
+     */
+    private $createDate;
+
+    /**
+     * @var \DateTime
+     */
+    private $updateDate;
+
+    /**
+     * @var integer
+     */
+    private $delFlg;
+
+    /**
+     * @var integer
+     */
+    private $adminId;
+
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return DtbAdmin
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return DtbAdmin
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string 
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     * @return DtbAdmin
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+
+        return $this;
+    }
+
+    /**
+     * Get salt
+     *
+     * @return string 
+     */
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    /**
+     * Set adminLevelId
+     *
+     * @param integer $adminLevelId
+     * @return DtbAdmin
+     */
+    public function setAdminLevelId($adminLevelId)
+    {
+        $this->adminLevelId = $adminLevelId;
+
+        return $this;
+    }
+
+    /**
+     * Get adminLevelId
+     *
+     * @return integer 
+     */
+    public function getAdminLevelId()
+    {
+        return $this->adminLevelId;
+    }
+
+    /**
+     * Set memo
+     *
+     * @param string $memo
+     * @return DtbAdmin
+     */
+    public function setMemo($memo)
+    {
+        $this->memo = $memo;
+
+        return $this;
+    }
+
+    /**
+     * Get memo
+     *
+     * @return string 
+     */
+    public function getMemo()
+    {
+        return $this->memo;
+    }
+
+    /**
+     * Set createDate
+     *
+     * @param \DateTime $createDate
+     * @return DtbAdmin
+     */
+    public function setCreateDate($createDate)
+    {
+        $this->createDate = $createDate;
+
+        return $this;
+    }
+
+    /**
+     * Get createDate
+     *
+     * @return \DateTime 
+     */
+    public function getCreateDate()
+    {
+        return $this->createDate;
+    }
+
+    /**
+     * Set updateDate
+     *
+     * @param \DateTime $updateDate
+     * @return DtbAdmin
+     */
+    public function setUpdateDate($updateDate)
+    {
+        $this->updateDate = $updateDate;
+
+        return $this;
+    }
+
+    /**
+     * Get updateDate
+     *
+     * @return \DateTime 
+     */
+    public function getUpdateDate()
+    {
+        return $this->updateDate;
+    }
+
+    /**
+     * Set delFlg
+     *
+     * @param integer $delFlg
+     * @return DtbAdmin
+     */
+    public function setDelFlg($delFlg)
+    {
+        $this->delFlg = $delFlg;
+
+        return $this;
+    }
+
+    /**
+     * Get delFlg
+     *
+     * @return integer 
+     */
+    public function getDelFlg()
+    {
+        return $this->delFlg;
+    }
+
+    /**
+     * Get adminId
+     *
+     * @return integer 
+     */
+    public function getAdminId()
+    {
+        return $this->adminId;
+    }
+}

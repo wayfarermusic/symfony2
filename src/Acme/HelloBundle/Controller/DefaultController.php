@@ -9,10 +9,14 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
+    /**
+     * @author t.shinohara
+     * 
+     */
     public function indexAction(Request $request)
     {
         
-        //セッションの読み込み
+        //セッションの読み込み/
         $session = $this->getRequest()->getSession();
         
         //セッションのデータを取得
@@ -43,7 +47,23 @@ class DefaultController extends Controller
             //セッションの設定
             $session->set('contact', $arrFormParam);
             
-            return $this->redirect($this->generateUrl('comfirm'));
+            
+            $validator = $this->get('validator');
+            $errors    = $validator->validate($hello);
+            
+            //エラーがあるとき
+            if(count($errors) > 0){
+              
+              return $this->render('AcmeHelloBundle:Default:index.html.twig', 
+                                array(
+                                    'form' => $form->createView(),
+                                    'errors' => $errors
+                                ));
+              
+            }else{
+              return $this->redirect($this->generateUrl('comfirm'));
+            }
+            
         }
         
         return $this->render('AcmeHelloBundle:Default:index.html.twig', array('form' => $form->createView()));

@@ -1,9 +1,17 @@
-acme_hello:
-    resource: "@AcmeHelloBundle/Resources/config/routing.yml"
+base_cms_common:
+    resource: "@BaseCmsCommonBundle/Resources/config/routing.yml"
     prefix:   /
 
-my_system_hello:
-    resource: "@MySystemHelloBundle/Resources/config/routing.yml"
+base_sms_common:
+    resource: "@BaseSmsCommonBundle/Resources/config/routing.yml"
+    prefix:   /
+
+base_cms_admin:
+    resource: "@BaseCmsAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+acme_hello:
+    resource: "@AcmeHelloBundle/Resources/config/routing.yml"
     prefix:   /
 
 app:

@@ -1,0 +1,41 @@
+base_cms:
+    path:     /{name}
+    defaults: { _controller: BaseCmsCommonBundle:Default:index }
+  
+base_cms_admin:
+    path:     /admin/
+    defaults: { _controller: BaseCmsAdminBundle:Default:index }
+
+#管理画面のログインページ
+base_cms_admin_login:
+    path:     /admin/login
+    defaults: { _controller: BaseCmsAdminBundle:Login:login }
+    
+#管理画面のログイン処理
+base_cms_admin_login_check:
+    path:     /admin/login_check
+
+#管理者一覧
+base_cms_admin_system:
+    path:     /admin/system/
+    defaults: { _controller: BaseCmsAdminBundle:System:index }
+
+#管理者検索
+base_cms_admin_system_search:
+    path:     /admin/system/search
+    defaults: { _controller: BaseCmsAdminBundle:S ystem:search }
+
+#管理者登録
+base_cms_admin_system_regist:
+    path:     /admin/system/regist/regist
+    defaults: { _controller: BaseCmsAdminBundle:System:regist }
+
+#管理者登録（確認画面）
+base_cms_admin_system_regist_confirm:
+    path:     /admin/system/regist/confirm
+    defaults: { _controller: BaseCmsAdminBundle:System:confirm }
+
+#管理者登録（完了画面）
+base_cms_admin_system_regist_complete:
+    path:     /admin/system/regist/complete
+    defaults: { _controller: BaseCmsAdminBundle:System:complete }

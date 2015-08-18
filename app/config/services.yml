@@ -7,3 +7,9 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+#      form.factory: # FrameworkBundleで定義されているものを再定義
+#        class: Acme\HelloBundle\Form\HelloFormFactory
+#        arguments: [ @form.registry, @form.resolved_type_factory, @service_container ]
+       form.factory: # FrameworkBundleで定義されているものを再定義
+         class: BaseCms\CommonBundle\Form\CommonFormFactory
+         arguments: [ @form.registry, @form.resolved_type_factory, @service_container ]
